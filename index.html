@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+</head>
+<body>
+  <header>
+    <h1>Mortgage Calculator</h1>
+    <p>Clear All</p>
+  </header>
+  <form>
+    <label for="amount">Mortgage Amount</label>
+    <input type="number" name="amount" id="amount">
+    <label for="term">Mortgage Term</label>
+    <input type="number" name="term" id="term">
+    <label for="interest">Interest Rate</label>
+    <input type="number" name="interest" id="interest">
+    <fieldset>
+      <legend>Mortgage Type</legend>
+      <label><input type="radio" name="type-of-mortgage">Repayment</label>
+      <label><input type="radio" name="type-of-mortgage">Interest Only</label>
+    </fieldset>
+    <button><img src="./assets/images/icon-calculator.svg" alt="Calculator"> Calculate Repayments</button>
+  <form/>
+
+  <!-- Empty results start
+  <section class="results-empty">
+    <img src="./assets/images/illustration-empty.svg" alt="Ilustration empty">
+    <h2>Results shown here</h2>
+    <p>
+      Complete the form and click “calculate repayments” to see what your monthly repayments would be.
+    </p>
+  </section>
+  -->
+
+  <!-- Completed results
+  <section class="results-completed">
+    <h2>Your results</h2>
+    <p>
+      Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.
+    </p>
+    <article class="results-completed__money">
+      <p>Your monthly repayments</p>
+      <span id="results-completed__monthly-repay">£1,797.74</span>
+      <p>Total you'll repay over the term</p>
+      <span id="results-completed__repay-term">£539,322.94</span>
+    </article>
+  </section>
+  -->
+</body>
+</html>
