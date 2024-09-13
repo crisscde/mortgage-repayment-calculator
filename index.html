@@ -4,38 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 </head>
 <body>
-  <header>
-    <h1>Mortgage Calculator</h1>
-    <p>Clear All</p>
-  </header>
-  <form>
-    <label for="amount">Mortgage Amount</label>
-    <input type="number" name="amount" id="amount">
-    <label for="term">Mortgage Term</label>
-    <input type="number" name="term" id="term">
-    <label for="interest">Interest Rate</label>
-    <input type="number" name="interest" id="interest">
-    <fieldset>
-      <legend>Mortgage Type</legend>
-      <label><input type="radio" name="type-of-mortgage">Repayment</label>
-      <label><input type="radio" name="type-of-mortgage">Interest Only</label>
-    </fieldset>
-    <button><img src="./assets/images/icon-calculator.svg" alt="Calculator"> Calculate Repayments</button>
-  <form/>
+  <main>
+      <h1>Mortgage Calculator</h1>
+      <span id="clear" >Clear All</span>
+    <form>
+      <label for="amount">Mortgage Amount</label>
+      <div>
+        <span class="input-icon">&pound;</span>
+        <input type="text" name="amount" id="amount" pattern="[0-9,]+">
+      </div>
+      <label for="term">Mortgage Term</label>
+      <div>
+        <input type="number" name="term" id="term">
+        <span class="input-text">years</span>
+      </div>
+      <label for="interest">Interest Rate</label>
+      <div>
+        <input type="number" name="interest" id="interest">
+        <span class="input-icon">%</span>
+      </div>
+        <fieldset>
+        <legend>Mortgage Type</legend>
+        <label>
+          <input type="radio" name="type-of-mortgage"> Repayment
+        </label>
+        <label>
+          <input type="radio" name="type-of-mortgage"> Interest Only
+        </label>
+      </fieldset>
+      <button>
+        <img src="./assets/images/icon-calculator.svg" alt="Calculator"> Calculate Repayments
+      </button>
+    <form/>
+  </main>
 
   <!-- Empty results start
   <section class="results-empty">
-    <img src="./assets/images/illustration-empty.svg" alt="Ilustration empty">
+    <img src="./assets/images/illustration-empty.svg" alt="Ilustration with instruments for calculate repayments">
     <h2>Results shown here</h2>
     <p>
       Complete the form and click “calculate repayments” to see what your monthly repayments would be.
     </p>
   </section>
   -->
-
   <!-- Completed results
   <section class="results-completed">
     <h2>Your results</h2>

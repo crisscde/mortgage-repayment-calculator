@@ -18,6 +18,7 @@
   --slate-500: hsl(200, 26%, 54%);
   --slate-700: hsl(200, 24%, 40%);
   --slate-900: hsl(202, 55%, 16%);
+  --bd-5: 5px;
 }
 
 * {
@@ -32,4 +33,119 @@
 body {
   min-height: 100vh;
   color: var(--slate-500);
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-block: 40px 5px;
+}
+
+#clear {
+  text-decoration: underline;
+}
+
+main {
+  min-width: 250px;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+}
+
+label {
+  display: block;
+}
+
+input[type="number"],
+input[type="text"] {
+  border: none;
+  width: 100%;
+  padding-inline: 15px;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+input[type="number"] {
+  border-start-start-radius: var(--bd-5);
+  border-end-start-radius: var(--bd-5);
+}
+
+input[type="text"] {
+  border-start-end-radius: var(--bd-5);
+  border-end-end-radius: var(--bd-5);
+}
+
+
+form > div {
+  margin-block-start: 10px;
+  display: flex;
+  height: 50px;
+  border: 2px solid var(--slate-300);
+  border-radius: var(--bd-5);
+}
+
+.input-icon,
+.input-text {
+  width: 10%;
+  height: 100%;
+  background-color: var(--slate-100);
+  display: grid;
+  place-content: center;
+  font-weight: 700;
+  color: var(--slate-700);
+  border-start-end-radius: var(--bd-5);
+  border-end-end-radius: var(--bd-5);
+}
+
+.input-text {
+  width: 20%;
+}
+
+.input-icon:nth-child(1) {
+  border-radius: 0;
+  border-start-start-radius: var(--bd-5);
+  border-end-start-radius: var(--bd-5);
+}
+
+fieldset, label[for] {
+  margin-block-start: 20px;
+}
+
+fieldset {
+  border: 0;
+}
+
+legend {
+  padding-block-end: 10px;
+}
+
+fieldset > label {
+  border: 2px solid var(--slate-300);
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--slate-900);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 50px;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--lime);
+}
+
+button {
+  background-color: var(--lime);
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 15px;
+  border-radius: 30px;
+  margin-block: 20px;
 }
