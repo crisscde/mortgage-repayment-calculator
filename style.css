@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src:
+    url(./assets/fonts/PlusJakartaSans-VF.woff2) format("woff2-variations"),
+    url(./assets/fonts/PlusJakartaSans-VF.woff) format("woff-variations"),
+    url(./assets/fonts/PlusJakartaSans-VF.ttf) format("truetype-variations");
+  font-weight: 500 700;
+  font-display: swap;
+  font-optical-sizing: auto;
+}
+
+:root {
+  --lime: hsl(61, 70%, 52%);
+  --red: hsl(4, 69%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --slate-100: hsl(202, 86%, 94%);
+  --slate-300: hsl(203, 41%, 72%);
+  --slate-500: hsl(200, 26%, 54%);
+  --slate-700: hsl(200, 24%, 40%);
+  --slate-900: hsl(202, 55%, 16%);
+}
+
+* {
+  font-family: 'Plus Jakarta Sans','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--slate-500);
+}
