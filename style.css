@@ -149,3 +149,27 @@ button {
   border-radius: 30px;
   margin-block: 20px;
 }
+
+.results-empty {
+  background-color: var(--slate-900);
+  padding-block-start: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results-empty > img {
+  width: 50%;
+}
+
+.results-empty > h1 {
+  color: var(--white);
+  margin-block: 10px 0;
+}
+
+.results-empty > p {
+  width: 62%;
+  text-wrap: pretty;
+  text-align: center;
+  margin-block: 20px 35px;
+}
