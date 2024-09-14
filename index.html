@@ -8,64 +8,71 @@
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 </head>
 <body>
-  <main>
-      <h1>Mortgage Calculator</h1>
-      <span id="clear" >Clear All</span>
-    <form>
-      <label for="amount">Mortgage Amount</label>
-      <div>
-        <span class="input-icon">&pound;</span>
-        <input type="text" name="amount" id="amount" pattern="[0-9,]+" required>
+  <main class="calculator">
+    <header class="calculator--header">
+      <h1 class="header--title">Mortgage Calculator</h1>
+      <span class="header--clear-all" id="clear" >Clear All</span>
+    </header>
+    <form class="calculator--form">
+      <!-- Mortgage Amount -->
+      <label class="form--label" for="amount">Mortgage Amount</label>
+      <div class="form--input-icon">
+        <span class="form--icon">&pound;</span>
+        <input type="text" name="amount" id="amount" pattern="[0-9,]+" class="form--input" required>
       </div>
-      <label for="term">Mortgage Term</label>
-      <div>
-        <input type="number" name="term" id="term"  pattern="[0-9.]+" required>
-        <span class="input-text">years</span>
+      <div class="form--input-numbers">
+        <!-- Mortgage Term -->
+        <label class="form--label" for="term">Mortgage Term</label>
+        <div class="form--input-icon">
+          <input type="number" name="term" id="term"  pattern="[0-9.]+" class="form--input" required>
+          <span class="form--icon form--icon__years ">years</spa>
+        </div>
+        <!-- Interest Rate -->
+        <label class="form--label"  for="interest">Interest Rate</label>
+        <div class="form--input-icon">
+          <input type="number" name="interest" id="interest" pattern="[0-9.]+"  class="form--input" required>
+          <span class="form--icon">%</span>
+        </div>
       </div>
-      <label for="interest">Interest Rate</label>
-      <div>
-        <input type="number" name="interest" id="interest" pattern="[0-9.]+" required>
-        <span class="input-icon">%</span>
-      </div>
-      <fieldset>
-        <legend>Mortgage Type</legend>
-        <label>
-          <input type="radio" name="type-of-mortgage"> Repayment
+      <fieldset class="form--radio-inputs">
+        <legend class="form--legend">Mortgage Type</legend>
+        <label class="form--label-radio">
+          <input class="form--input-radio" type="radio" name="type-of-mortgage"> Repayment
         </label>
-        <label>
-          <input type="radio" name="type-of-mortgage"> Interest Only
+        <label class="form--label-radio">
+          <input class="form--input-radio" type="radio" name="type-of-mortgage"> Interest Only
         </label>
         <small>This field is required</small>
       </fieldset>
-      <button>
+      <button class="form--button">
         <img src="./assets/images/icon-calculator.svg" alt="Calculator"> Calculate Repayments
       </button>
     <form/>
   </main>
 
-  <!-- Empty results start 
-    <section class="results-empty">
-      <img src="./assets/images/illustration-empty.svg" alt="Ilustration with instruments for calculate repayments">
-      <h1>Results shown here</h1>
-      <p>
+  <!-- Empty results start -->
+    <section class="results results__empty">
+      <img src="./assets/images/illustration-empty.svg" alt="Ilustration with instruments for calculate repayments" class="results__empty--img">
+      <h1 class="results--title results--title__empty">Results shown here</h1>
+      <p class="results--paragraph">
         Complete the form and click “calculate repayments” to see what your monthly repayments would be.
       </p>
     </section>
+  
+  <!-- Completed results
+    <section class="results results__completed">
+      <h1 class="results--title results--title__completed">Your results</h1>
+      <p class="results--paragraph results--paragraph__completed" >
+        Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.
+      </p>
+      <article class="completed--results">
+        <p class="results--paragraph">Your monthly repayments</p>
+        <span class="results--monthly" id="monthly">£1,797.74</span>
+        <hr>
+        <p class="results--paragraph">Total you'll repay over the term</p>
+        <span class="results--term" id="term">£539,322.94</span>
+      </article>
+    </section>
   -->
-
-  <!-- Completed results -->
-  <section class="results-completed">
-    <h1>Your results</h1>
-    <p>
-      Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.
-    </p>
-    <article class="results-completed__money">
-      <p>Your monthly repayments</p>
-      <span id="results-completed__monthly-repay">£1,797.74</span>
-      <hr>
-      <p>Total you'll repay over the term</p>
-      <span id="results-completed__repay-term">£539,322.94</span>
-    </article>
-  </section>
 </body>
 </html>

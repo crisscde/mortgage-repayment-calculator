@@ -1,3 +1,4 @@
+/* @font-face rules */
 @font-face {
   font-family: 'Plus Jakarta Sans';
   src:
@@ -9,6 +10,7 @@
   font-optical-sizing: auto;
 }
 
+/* Custom properties */
 :root {
   --lime: hsl(61, 70%, 52%);
   --red: hsl(4, 69%, 50%);
@@ -21,6 +23,7 @@
   --bd-5: 5px;
 }
 
+/* GENAREAL STYLES */
 * {
   font-family: 'Plus Jakarta Sans','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 500;
@@ -33,43 +36,64 @@
 body {
   min-height: 100vh;
   color: var(--slate-500);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--slate-100);
 }
 
 h1 {
   font-size: 24px;
   font-weight: 700;
-  color: var(--slate-900);
-  margin-block: 40px 5px;
 }
 
-#clear {
+.calculator{
+  min-width: 250px;
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--white);
+  padding: 20px;
+}
+
+/* HEADER */
+.calculator--header {
+  margin-block: 10px 30px;
+}
+
+.header--title {
+  color: var(--slate-900);
+}
+
+.header--clear {
   text-decoration: underline;
   transition: .2s ease;
 }
 
-#clear:hover {
+.header--clear:hover {
   cursor: pointer;
   color: var(--slate-700);
 }
 
-main {
-  min-width: 250px;
-  width: 90%;
-  max-width: 400px;
-  margin: auto;
-}
+/* FORM */
 
-label {
+.form--label {
   display: block;
 }
 
-input[type="number"],
-input[type="text"] {
+.form--input {
   border: none;
   width: 100%;
   padding-inline: 15px;
   font-weight: 700;
   color: var(--slate-900);
+}
+
+.form--input-icon{
+  margin-block-start: 10px;
+  display: flex;
+  height: 50px;
+  border: 2px solid var(--slate-300);
+  border-radius: var(--bd-5);
 }
 
 input[type="number"] {
@@ -82,46 +106,13 @@ input[type="text"] {
   border-end-end-radius: var(--bd-5);
 }
 
-form > div {
-  margin-block-start: 10px;
-  display: flex;
-  height: 50px;
-  border: 2px solid var(--slate-300);
-  border-radius: var(--bd-5);
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus {
+/* FORM STATES - :focus */
+.form--input:focus {
   outline: none;
 }
 
-div:has(:user-invalid){
-  border: 2px solid var(--red);
-  margin-bottom: 40px;
-  background-color: var(--red);
-}
-
-div:has(:focus) {
+.form--input-icon:has(:focus) {
   border: 2px solid var(--lime);
-}
-
-div:has(:user-invalid)::after {
-  content: "This field is required";
-  position: absolute;
-  padding-top: 55px;
-  color: var(--red);
-  z-index: -1;
-}
-
-input[type="text"]:user-invalid,
-input[type="number"]:user-invalid {
-  outline: none;
-}
-
-span:has(+ input:user-invalid),
-input:user-invalid + span {
-  background: var(--red);
-  color: var(--white);
 }
 
 span:has(+ input:focus),
@@ -130,18 +121,43 @@ input:focus + span {
   color: var(--slate-900);
 }
 
-input:hover {
+/* FORM STATES - :user-invalid */
+.form--input-icon:has(:user-invalid){
+  border: 2px solid var(--red);
+  margin-bottom: 40px;
+  background-color: var(--red);
+}
+
+.form--input-icon:has(:user-invalid)::after {
+  content: "This field is required";
+  position: absolute;
+  padding-top: 55px;
+  color: var(--red);
+  z-index: -1;
+}
+
+.form--input:user-invalid {
+  outline: none;
+}
+
+.form--icon:has(+ .form--input:user-invalid),
+.form--input:user-invalid + .form--icon {
+  background: var(--red);
+  color: var(--white);
+}
+
+/* FORM STATES - :hover */
+.form--input:hover {
   cursor: pointer;
 }
 
-div:has(:hover) {
+.form--input-icon:has(:hover) {
   cursor: pointer;
   border: 2px solid var(--slate-700);
   transition: .2s linear;
 }
 
-.input-icon,
-.input-text {
+.form--icon{
   width: 15%;
   height: 100%;
   background-color: var(--slate-100);
@@ -153,29 +169,28 @@ div:has(:hover) {
   border-end-end-radius: var(--bd-5);
 }
 
-.input-text {
+.form--icon__years {
   width: 25%;
 }
 
-.input-icon:nth-child(1) {
+.form--icon:nth-child(1) {
   border-radius: 0;
   border-start-start-radius: var(--bd-5);
   border-end-start-radius: var(--bd-5);
 }
-
-fieldset, label[for] {
+.form--radio-inputs, .form--label {
   margin-block-start: 20px;
 }
 
-fieldset {
+.form--radio-inputs {
   border: 0;
 }
 
-legend {
+.form--legend {
   padding-block-end: 10px;
 }
 
-fieldset > label {
+.form--label-radio {
   border: 2px solid var(--slate-300);
   padding: 10px;
   margin-bottom: 10px;
@@ -192,28 +207,28 @@ small {
   color: var(--red);
 }
 
-label:has(:checked) ~ small {
+.form--label-radio:has(:checked) ~ small {
   display: none;
 }
 
-input[type="radio"] {
+.form--input-radio {
   width: 20px;
   height: 20px;
   accent-color: hsl(60 69% 55%);
 }
 
-label:has(:checked) {
+.form--label-radio:has(:checked) {
   border-color: var(--lime);
   background-color: hsl(61 70% 52% / 20%);
 }
 
-label:has(:hover){
+.form--label-radio:has(:hover){
   cursor: pointer;
   border: 2px solid var(--lime);
   transition: .2s linear;
 }
 
-button { 
+.form--button { 
   background-color: var(--lime);
   border: none;
   width: 100%;
@@ -228,52 +243,50 @@ button {
   transition: .25s ease-in;
 }
 
-button:hover {
+.form--button:hover {
   cursor: pointer;
   background-color: hsl(61 70% 52% / 50%);
 }
 
-.results-empty{
+
+.results{
   background-color: var(--slate-900);
   padding-block-start: 50px;
+  min-width: 250px;
+  width: 100%;
+  max-width: 450px;
+  padding: 40px 35px;
+}
+
+.results__empty {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
-.results-empty > img {
+.results__empty--img{
   width: 50%;
 }
 
-.results-empty > h1 {
+.results--title {
   color: var(--white);
-  margin-block: 10px 0;
 }
 
-.results-empty > p {
-  width: 62%;
-  text-wrap: pretty;
-  text-align: center;
-  margin-block: 20px 35px;
+.results--title__empty {
+  margin-block: 10px 20px;
 }
 
-.results-completed {
-  background-color: var(--slate-900);
-  padding: 40px 25px;
-}
-
-.results-completed > h1 {
-  color: var(--white);
-  margin-block: 0;
+.results--title__completed {
   padding-block-end: 15px;
 }
 
-.results-completed > p {
-  text-wrap: pretty;
+.results--paragraph__completed {
+  text-align: initial;
   line-height: 1.5;
 }
 
-.results-completed__money {
+.completed--results {
   width: 100%;
   background-color: hsl(202, 56%, 12%);
   margin-block-start: 35px;
@@ -282,7 +295,7 @@ button:hover {
   padding: 25px 15px;
 }
 
-#results-completed__monthly-repay {
+.results--monthly {
   padding-block-start: 15px;
   font-size: 40px;
   font-weight: 700;
@@ -290,7 +303,7 @@ button:hover {
   display: block;
 }
 
-#results-completed__repay-term {
+.results--term {
   padding-block-start: 15px;
   font-size: 24px;
   font-weight: 700;
