@@ -20,20 +20,24 @@
         <span class="form--icon">&pound;</span>
         <input type="text" name="amount" id="amount" pattern="[0-9,]+" class="form--input" required>
       </div>
-      <div class="form--input-numbers">
+      <article class="form--input-numbers">
         <!-- Mortgage Term -->
-        <label class="form--label" for="term">Mortgage Term</label>
-        <div class="form--input-icon">
-          <input type="number" name="term" id="term"  pattern="[0-9.]+" class="form--input" required>
-          <span class="form--icon form--icon__years ">years</spa>
-        </div>
+        <section class="input--term">
+          <label class="form--label" for="term">Mortgage Term</label>
+          <div class="form--input-icon">
+            <input type="number" name="term" id="term"  pattern="[0-9.]+" class="form--input" required>
+            <span class="form--icon form--icon__years ">years</spa>
+            </div>
+          </section>
         <!-- Interest Rate -->
-        <label class="form--label"  for="interest">Interest Rate</label>
-        <div class="form--input-icon">
-          <input type="number" name="interest" id="interest" pattern="[0-9.]+"  class="form--input" required>
-          <span class="form--icon">%</span>
-        </div>
-      </div>
+        <section class="input--interest">
+          <label class="form--label"  for="interest">Interest Rate</label>
+          <div class="form--input-icon">
+            <input type="number" name="interest" id="interest" pattern="[0-9.]+"  class="form--input" required>
+            <span class="form--icon form--icon--percentaje">%</span>
+          </div>
+        </section>
+        </article>
       <fieldset class="form--radio-inputs">
         <legend class="form--legend">Mortgage Type</legend>
         <label class="form--label-radio">

@@ -64,14 +64,9 @@ h1 {
   color: var(--slate-900);
 }
 
-.header--clear {
+.header--clear-all {
   text-decoration: underline;
   transition: .2s ease;
-}
-
-.header--clear:hover {
-  cursor: pointer;
-  color: var(--slate-700);
 }
 
 /* FORM */
@@ -86,6 +81,7 @@ h1 {
   padding-inline: 15px;
   font-weight: 700;
   color: var(--slate-900);
+  z-index: 1;
 }
 
 .form--input-icon{
@@ -133,7 +129,6 @@ input:focus + span {
   position: absolute;
   padding-top: 55px;
   color: var(--red);
-  z-index: -1;
 }
 
 .form--input:user-invalid {
@@ -155,6 +150,11 @@ input:focus + span {
   cursor: pointer;
   border: 2px solid var(--slate-700);
   transition: .2s linear;
+}
+
+.header--clear-all:hover {
+  cursor: pointer;
+  color: var(--slate-700);
 }
 
 .form--icon{
@@ -314,4 +314,55 @@ small {
 hr {
   border: 1px solid var(--slate-700);
   margin-block: 20px;
+}
+
+@media screen and (width > 700px) {
+  body {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .calculator, .results {
+    min-height: 650px;
+    height: 60%;
+    max-height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px 0px 0px 20px;
+  }
+
+  .calculator {
+    padding: 20px 70px 20px 20px;
+  }
+
+  .results {
+    border-radius: 0px 20px 20px 65px;
+    margin: -50px;
+  }
+
+  .calculator--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 10px 5px;
+  }
+
+  .form--input-numbers {
+    display: flex;
+    gap: 20px;
+  }
+
+  .form--icon__years {
+    width: 50%;
+  }
+
+  .form--icon--percentaje {
+    width: 30%;
+  }
+
+  .form--button {
+    width: 70%;
+    padding-block: 12px;
+  }
 }
