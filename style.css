@@ -44,6 +44,12 @@ h1 {
 
 #clear {
   text-decoration: underline;
+  transition: .2s ease;
+}
+
+#clear:hover {
+  cursor: pointer;
+  color: var(--slate-700);
 }
 
 main {
@@ -76,13 +82,62 @@ input[type="text"] {
   border-end-end-radius: var(--bd-5);
 }
 
-
 form > div {
   margin-block-start: 10px;
   display: flex;
   height: 50px;
   border: 2px solid var(--slate-300);
   border-radius: var(--bd-5);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+}
+
+div:has(:user-invalid){
+  border: 2px solid var(--red);
+  margin-bottom: 40px;
+  background-color: var(--red);
+}
+
+div:has(:focus) {
+  border: 2px solid var(--lime);
+}
+
+div:has(:user-invalid)::after {
+  content: "This field is required";
+  position: absolute;
+  padding-top: 55px;
+  color: var(--red);
+  z-index: -1;
+}
+
+input[type="text"]:user-invalid,
+input[type="number"]:user-invalid {
+  outline: none;
+}
+
+span:has(+ input:user-invalid),
+input:user-invalid + span {
+  background: var(--red);
+  color: var(--white);
+}
+
+span:has(+ input:focus),
+input:focus + span {
+  background-color: var(--lime);
+  color: var(--slate-900);
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+div:has(:hover) {
+  cursor: pointer;
+  border: 2px solid var(--slate-700);
+  transition: .2s linear;
 }
 
 .input-icon,
@@ -133,13 +188,32 @@ fieldset > label {
   border-radius: 5px;
 }
 
+small {
+  color: var(--red);
+}
+
+label:has(:checked) ~ small {
+  display: none;
+}
+
 input[type="radio"] {
   width: 20px;
   height: 20px;
-  accent-color: var(--lime);
+  accent-color: hsl(60 69% 55%);
 }
 
-button {
+label:has(:checked) {
+  border-color: var(--lime);
+  background-color: hsl(61 70% 52% / 20%);
+}
+
+label:has(:hover){
+  cursor: pointer;
+  border: 2px solid var(--lime);
+  transition: .2s linear;
+}
+
+button { 
   background-color: var(--lime);
   border: none;
   width: 100%;
@@ -150,6 +224,13 @@ button {
   border-radius: 30px;
   margin-block: 20px;
   gap: 10px;
+  font-weight: 700;
+  transition: .25s ease-in;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(61 70% 52% / 50%);
 }
 
 .results-empty{

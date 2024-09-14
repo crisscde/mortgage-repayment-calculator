@@ -15,19 +15,19 @@
       <label for="amount">Mortgage Amount</label>
       <div>
         <span class="input-icon">&pound;</span>
-        <input type="text" name="amount" id="amount" pattern="[0-9,]+">
+        <input type="text" name="amount" id="amount" pattern="[0-9,]+" required>
       </div>
       <label for="term">Mortgage Term</label>
       <div>
-        <input type="number" name="term" id="term">
+        <input type="number" name="term" id="term"  pattern="[0-9.]+" required>
         <span class="input-text">years</span>
       </div>
       <label for="interest">Interest Rate</label>
       <div>
-        <input type="number" name="interest" id="interest">
+        <input type="number" name="interest" id="interest" pattern="[0-9.]+" required>
         <span class="input-icon">%</span>
       </div>
-        <fieldset>
+      <fieldset>
         <legend>Mortgage Type</legend>
         <label>
           <input type="radio" name="type-of-mortgage"> Repayment
@@ -35,6 +35,7 @@
         <label>
           <input type="radio" name="type-of-mortgage"> Interest Only
         </label>
+        <small>This field is required</small>
       </fieldset>
       <button>
         <img src="./assets/images/icon-calculator.svg" alt="Calculator"> Calculate Repayments
